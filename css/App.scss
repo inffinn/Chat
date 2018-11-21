@@ -1,0 +1,328 @@
+@import "globals";
+
+
+body {
+    //padding: 50px;
+    color: #545454;
+    margin: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+    color: #00B7FF;
+}
+.App{
+    background-image: radial-gradient(circle, #e4e4e4, #6d6d6d);
+    height:100vh;
+
+    .input_panel{
+
+        div{
+            display:flex;
+            justify-content: flex-end;
+            input{
+                margin: 5px 0px 5px 0px;
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 1px;
+                // text-align: right;
+                width: 100%;
+                border-color: #bdbdbd;
+            }
+            .Button{
+                display: flex;
+                justify-content: center;
+                float: right;
+                width: 100px;
+                @include button_gradient;
+                border-style: groove;
+                border-radius: 5px;
+                color: #545454;
+                border-width: 2px;
+
+            }
+        }
+    }
+    .Start_page{
+        position: absolute;
+        margin: 30% 30%;
+        width: 30%;
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
+        box-shadow: inset 1px 1px 1px white;
+        .header{    text-align: center;}
+        border-style: groove;
+        border-width: 2px;
+    }
+    .Page{
+        width: 80%;
+        margin: auto;
+        //height: 100vh;
+        border-style:none;
+        border-collapse: collapse;
+        .Head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #bcd7ff;
+            height: 30px;
+            background-image: radial-gradient(circle, #e0e0e0, #adadad);
+            text-align: center;
+            box-shadow: inset 1px 1px 1px white;
+            border-style: groove;
+            border-width: 2px;
+            vertical-align: middle;
+        }
+
+        .Body{
+
+            background-image: radial-gradient(circle, #ffffff, #d8e4e4);
+            display:flex;
+            .left_container{
+                padding: 3px;
+                //width: 15%;
+                // background-image: radial-gradient(circle, #f3f3f3, #b2cccc);
+                // background-image: linear-gradient(to top, #f3f3f3, #b2cccc);
+                //height:100vh;
+                border-style: groove;
+                border-radius: 5px;
+                border-width: 2px;
+
+            }
+            .right_container{
+                padding: 3px;
+                width: 100%;
+                box-shadow: inset 1px 1px 1px white;
+                //background-image: radial-gradient(circle, #ffffff, #d8e4e4);
+                //background-image: linear-gradient(to top, #f3f3f3, #b2cccc);
+                //height:100vh;
+                border-style: groove;
+                border-radius: 5px;
+                border-width: 2px;
+
+            }
+
+
+            .Header{
+                border-style:groove;
+                border-width: 2px;
+                padding: 5px 10px 5px 10px;
+                text-align: center;
+                height: 20px;
+                padding: 0px;
+                border-radius: 5px;
+                @include header_gradient;
+            }
+
+
+            .Rooms{
+                border-radius: 5px;
+                padding: 5px 10px 5px 10px;
+                box-shadow: inset 1px 1px 1px white;
+                .Header{ 
+                    display:flex;
+                    .rooms{
+                        margin: 0 5px 0 30%;
+                    }
+                    .Button{
+                        @include button;
+                    }
+                }
+                .row{
+                    .room_row{
+                        display: flex;
+                        justify-content: flex-end;
+                        border-style: groove;
+                        border-width: 2px;
+                        border-radius: 5px;
+                        margin: 5px 0px 0px 0px;
+                        &:hover{
+                            background-color: #c0e5c0;
+                        }
+                        .room{
+                            width: 100%;
+                            text-align: center;
+                            cursor: pointer;
+                        }   
+
+                        .Button{
+                            @include button;
+                        }  
+                    }
+                    .users{
+                        .user_row{
+                            display:flex;
+                            justify-content: flex-end; 
+                                border-radius: 5px;
+                            
+                            .user{
+                                width: 100%;
+                                text-align: center;
+                                cursor: pointer;
+                                &:hover{
+                                background-color: #c0e5c0;
+                            }
+                            }
+                            .current_user{
+                               @extend .user;
+                                color:green;
+                            }
+                            .Button{
+                                @include button;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .Current_name{
+                border-radius: 5px;
+                padding: 5px 10px 5px 10px;
+                box-shadow: inset 1px 1px 1px white;
+                .header{    text-align: center;}
+                border-style: groove;
+                border-width: 2px;
+            }
+            .Users{
+                border-radius: 5px;
+                padding: 5px 10px 5px 10px;
+                box-shadow: inset 1px 1px 1px white;
+                .header{   
+                    text-align: center;
+                }
+                border-style: groove;
+                border-width: 2px;
+                .user_row{
+                    display:flex;
+                    justify-content: flex-end; 
+                    .user{
+                        cursor: pointer;
+                        text-align: center;
+                         width: 100%;
+                         &:hover{
+                                background-color: #c0e5c0;
+                            }
+                    }
+                        .current_user{
+                        @extend .user;
+                       color:green;
+                    }
+                    .Button{
+                        @include button;
+                    }
+                }
+
+            }
+
+            .Messages{
+                border-radius: 5px;
+                .header{    text-align: center;}
+                padding: 5px 10px 5px 10px;
+                border-style: inherit;
+                .Info{
+                    height: 80vh;
+                    overflow: scroll;
+                    background-color: white;
+                    //margin: 5px 0px;
+                    padding: 5px;
+                    border-style: solid;
+                    border-radius: 5px; 
+                    border-width: 1px;
+                    border-color: #bdbdbd;
+                    .link{
+                        color:blue;
+                        cursor: pointer;
+                    }
+                }
+                .active_rooms_panel{
+                    display: flex;
+                    padding: 5px 0px 0px 0px;
+                    margin: 0px 2px 0px 2px;
+                    height:20px;
+                    .active_rooms{
+                        border-bottom-color: white;
+                        border-top-color: #bfc0c0;
+                        border-left-color: #bfc0c0;
+                        border-right-color: #bfc0c0; 
+                        background-color: #f1f1f1;
+                        padding: 0px 5px 0px 5px;
+                        //background-color: #cacaca;
+                        margin: 0px 5px 0px 0px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        box-shadow: inset 1px 1px 1px white;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: #bcbcbc;
+                        height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: default;
+                        @include animation;
+                        &:hover{
+                            border-bottom-style: none;
+                            background-color: white;
+                            transform:  scale(1.1)
+                        }
+
+                    }
+                    .current_room{
+                        border-bottom-color: white;
+                        border-top-color: #bfc0c0;
+                        border-left-color: #bfc0c0;
+                        border-right-color: #bfc0c0; 
+                        background-color: #f1f1f1;
+                        padding: 0px 5px 0px 5px;
+                        //background-color: #cacaca;
+                        margin: 0px 5px 0px 0px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        box-shadow: inset 1px 1px 1px white;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: #bcbcbc;
+                        height: 20px;
+                        border-bottom-style: none;
+                        background-color: white;
+                        cursor: default;
+                    }
+                    .container{
+                        display:flex;
+                        .active_room{
+                            display:flex;
+                            .name_room{
+
+                            }
+                            .count{
+                                margin: 0px 0px 0px 5px; 
+                            }
+                        }
+                        .close_room{
+                            color: white;
+                            border-radius: 50px;
+                            border-style: solid;
+                            border-width: 1px;
+                            cursor: pointer;
+                            background-color: #ff9797;
+                            height: 12px;
+                            width: 12px;
+                            margin: 0px 0px 0px 2px;
+                            display: flex;
+                            justify-content: center;
+                            font-size: 13px;
+                            align-items: center;
+                        }   
+                    }
+
+
+                }
+            }
+
+        }}
+}
+
+// Ширина окна приложения составляет 800 пикселов, применено
+// центрирование по горизонтали
+
+
